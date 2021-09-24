@@ -18,10 +18,10 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <b-dropdown id="dropdown-1" text="Shop" class="m-md-2">
-                            <b-dropdown-item>Kid's Shoes</b-dropdown-item>
-                            <b-dropdown-item>Women's Shoes</b-dropdown-item>
+                            <b-dropdown-item><router-link :to="{name:'kids'}" class="nav-link" >Kid's Shoes</router-link></b-dropdown-item>
+                            <b-dropdown-item><router-link :to="{name:'women'}" class="nav-link" >Women's Shoes</router-link></b-dropdown-item>
                             <b-dropdown-item><router-link :to="{name:'mens'}" class="nav-link" >Men's shoes</router-link></b-dropdown-item>
-                            <b-dropdown-item>Trending shoes</b-dropdown-item>
+                            <b-dropdown-item><router-link :to="{name:'classy'}" class="nav-link" >Classy shoes</router-link></b-dropdown-item>
                             
                         </b-dropdown> 
                         <li class="nav-item">
@@ -31,10 +31,10 @@
                             <router-link :to="{name:'about'}" class="nav-link" >About</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <router-link :to="{name:'contact'}" class="nav-link" >Contact</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">News</a>
+                            <router-link :to="{name:'news'}" class="nav-link" >News</router-link>
                         </li>
                     </ul>
                 </div>

@@ -192,7 +192,50 @@ h1.kids{
 .about h1{
   text-align: left;
 }
+.browse1{
+  background: transparent!important;
 
+}
+.browse2{
+  padding-bottom:50px;
+}
 
+.product-card {
+    padding-left: 45px!important;
+}
+.heading{
+      text-align: left;
+    font-weight: 500!important;
+    font-size: 30px!important;
+}
+p.par{
+      text-align: left;
+}
+.news{
+  padding: 50px 0;
+}
+.news-heading{
+      font-size: 50px!important;
+      padding-bottom: 30px;
+}
+a.readmore{
+    color: #535353;
 
+}
+.modal-header{
+  display: none!important;
+}
+.headline{
+  font-size: 35px!important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #6c767d;
+    border-color: #6c767d;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #6c767d;
+    border-color: #6c767d;
+}
 </style>
