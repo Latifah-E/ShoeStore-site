@@ -1,5 +1,23 @@
 <template>
 <div>
+    <div id="template-mo-zay-hero-carousel2" class="carousel slide" data-bs-ride="carousel">
+       
+        <div class="carousel-inner backdrop-carousel">
+            <div class="carousel-item active">
+                <img src="../assets/kids-backdrop1.svg" class="backdrop">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/kids-backdrop2.svg" class="backdrop">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/kids-backdrop3.svg" class="backdrop">
+            </div>
+        </div>
+       
+    </div>
+     <div class="backdrop-title2">
+        <img src="../assets/kids-title.svg">
+    </div>
     <main class="container">
     <div id="template-mo-zay-hero-carousel" class="carousel slide browse1" data-bs-ride="carousel">
         
@@ -18,7 +36,7 @@
             <div class="price">$999</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn  button">Buy Now</button>
+            <button    class="buy-btn  button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -39,7 +57,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -60,7 +78,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -84,7 +102,7 @@
             <div class="price">$999</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn  button">Buy Now</button>
+            <button    class="buy-btn  button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -105,7 +123,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -126,7 +144,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -154,7 +172,7 @@
             <div class="price">$999</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn  button">Buy Now</button>
+            <button    class="buy-btn  button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -175,7 +193,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -196,7 +214,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -220,7 +238,7 @@
             <div class="price">$999</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn  button">Buy Now</button>
+            <button    class="buy-btn  button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -241,7 +259,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -262,7 +280,7 @@
             <div class="price">$1599</div>
         </div>
         <div class="btn2">
-            <button class="buy-btn button">Buy Now</button>
+            <button    class="buy-btn button">Buy Now</button>
             <button class="fav carticon button">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>

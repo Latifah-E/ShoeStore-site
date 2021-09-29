@@ -1,5 +1,24 @@
 <template>
 <div>
+     <div id="template-mo-zay-hero-carousel2" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner backdrop-carousel">
+            <div class="carousel-item active">
+                <img src="../assets/classy-backdrop1.svg" class="backdrop">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/classy-backdrop2.svg" class="backdrop">
+            </div>
+            <div class="carousel-item">
+                <img src="../assets/classy-backdrop3.svg" class="backdrop">
+            </div>
+        </div>
+       
+    </div>
+     <div class="backdrop-title3">
+        <img src="../assets/classy-title.svg">
+    </div>
+    
     <main class="container">
     <div id="template-mo-zay-hero-carousel" class="carousel slide browse1" data-bs-ride="carousel">
         
