@@ -28,7 +28,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card">
                <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men1.svg" alt="OFF-white Red Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids1.svg" alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -49,7 +49,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men2.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids2.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -70,7 +70,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men3.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids3.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -94,7 +94,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card">
                <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men4.svg" alt="OFF-white Red Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids4.svg" alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -115,7 +115,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men1.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids5.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -136,7 +136,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men5.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids6.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -164,7 +164,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card">
                <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men4.svg" alt="OFF-white Red Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids7.svg" alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -185,7 +185,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men1.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids8.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -206,7 +206,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men5.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids9.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -230,7 +230,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card">
                <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men1.svg" alt="OFF-white Red Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids10.svg" alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -251,7 +251,7 @@
     <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men2.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids11.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
@@ -272,7 +272,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men3.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/kids12.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>

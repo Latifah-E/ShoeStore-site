@@ -139,7 +139,7 @@
               <div class="col-lg-4 col-md-4 col-sm-12 product-card">
               <section class="card2">
         <div class="product-image">
-            <img class="shoes" src="../assets/men12.svg" alt="OFF-white Blue Edition" draggable="false" />
+            <img class="shoes" src="../assets/mens0.svg" alt="OFF-white Blue Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2>Nike X OFF-white</h2>
