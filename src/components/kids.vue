@@ -26,13 +26,13 @@
                 <div class="row main-row">
                  <div class="row sneakers">
             <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-               <section class="card2">
+               <section class="card2" id="kids">
         <div class="product-image">
-            <img class="shoes" src="../assets/kids1.svg" alt="OFF-white Red Edition" draggable="false" />
+            <img class="shoes path" src="../assets/kids1.svg" alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-             <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
+            <h2 class="name">Nike X OFF-white</h2>
+             <p class="brand">Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
             <div class="price">$999</div>
         </div>
         <div class="btn2">
