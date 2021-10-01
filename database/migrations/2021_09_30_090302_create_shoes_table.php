@@ -18,14 +18,20 @@ class CreateShoesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('brand');
-            $table->string('category');
+            $table->integer('category_id');
             $table->integer('stock');
             $table->string('path');
             $table->double('price');
+             
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
+
         });
     }
 
-    /**
+    /**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
      * Reverse the migrations.
      *
      * @return void

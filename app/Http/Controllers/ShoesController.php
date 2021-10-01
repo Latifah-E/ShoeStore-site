@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shoes;
+use App\Models\category;
 class ShoesController extends Controller
 {
     /**
@@ -62,7 +63,9 @@ class ShoesController extends Controller
      */
     public function show($id)
     {
-        return shoes::findorFail($id);
+        
+        return Shoes::findorFail($id);
+        
     }
 
     /**

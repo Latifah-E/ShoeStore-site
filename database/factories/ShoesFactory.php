@@ -24,7 +24,7 @@ class ShoesFactory extends Factory
         return [
             'name'=>$this->faker->word,
             'brand'=>$this->faker->company,
-            'category'=>$this->faker->word,
+            'category_id'=>$this->faker->word,
             'stock'=>$this->faker->randomDigit,
             'path'=>$this->faker->imageUrl,
             'price'=>$this->faker->randomFloat
