@@ -1,6 +1,6 @@
 <template>
-<div>
-    <div id="template-mo-zay-hero-carousel2" class="carousel slide" data-bs-ride="carousel">
+<div class="padded">
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
        
         <div class="carousel-inner backdrop-carousel">
             <div class="carousel-item active">
@@ -13,300 +13,81 @@
                 <img src="../assets/kids-backdrop3.svg" class="backdrop">
             </div>
         </div>
+
+       
        
     </div>
      <div class="backdrop-title2">
         <img src="../assets/kids-title.svg">
     </div>
     <main class="container">
-    <div id="template-mo-zay-hero-carousel" class="carousel slide browse1" data-bs-ride="carousel">
+    
         
-        <div class="carousel-inner browse2">
-            <div class="carousel-item active">
-                <div class="row main-row">
-                 <div class="row sneakers">
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-               <section class="card2" id="kids">
-        <div class="product-image">
-            <img class="shoes path" src="../assets/kids1.svg" alt="OFF-white Red Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2 class="name">Nike X OFF-white</h2>
-             <p class="brand">Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$999</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        
-                    </a>
-            </button>
-        </div>
-    </section>
-            </div>
-    <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids2.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids3.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-    
-        </div>
-         <div class="row sneakers">
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-               <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids4.svg" alt="OFF-white Red Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-             <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$999</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        
-                    </a>
-            </button>
-        </div>
-    </section>
-            </div>
-    <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids5.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids6.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-    
-        </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="main-row row">
-                <div class="row sneakers">
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-               <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids7.svg" alt="OFF-white Red Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-             <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$999</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        
-                    </a>
-            </button>
-        </div>
-    </section>
-            </div>
-    <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids8.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids9.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-    
-        </div>
-         <div class="row sneakers">
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-               <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids10.svg" alt="OFF-white Red Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-             <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$999</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        
-                    </a>
-            </button>
-        </div>
-    </section>
-            </div>
-    <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids11.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 product-card">
-              <section class="card2">
-        <div class="product-image">
-            <img class="shoes" src="../assets/kids12.svg" alt="OFF-white Blue Edition" draggable="false" />
-        </div>
-        <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>Air Jordan 1 Retro High "Off-White - UNC" sneakers</p>
-            <div class="price">$1599</div>
-        </div>
-        <div class="btn2">
-            <button    class="buy-btn button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                       
-                    </a>
-            </button>
-        </div>
-    </section>
-    </div>
-    
-        </div>
-                </div>
-            </div>
+     
             
+                <div class="row main-row">
+                 <div class="row sneakers" id="kidsrow"  >
+
+            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="kid in kids" :key="kid">
+               <section class="card2" id="kids" >
+        <div class="product-image">
+            <img class="kids path" :src="kid.path"  alt="OFF-white Red Edition" draggable="false" />
         </div>
-        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
-            <i class="fas fa-chevron-left"></i>
-        </a>
-        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
-            <i class="fas fa-chevron-right"></i>
-        </a>
-    </div>
+        <div class="product-info">
+            <h2 class="name">{{kid.name}}</h2>
+             <p class="brand">{{kid.brand}}</p>
+            <div class="price">${{kid.price}}</div>
+        </div>
+        <div class="btn2">
+            <button    class="buy-btn  button">Buy Now</button>
+            <button class="fav carticon button" >
+                  <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        
+                    </a>
+            </button>
+        </div>
+    </section>
+            </div>
+        </div>
+                </div>
+            
+            
+        
+       
     
     </main>
 </div>
 </template>
+
+
+<script>
+export default {
+    data:function(){
+        return {
+            kids:[],
+            isloading:false
+        }
+    },
+    mounted(){
+        this.init()
+    },
+    methods:{
+        init(){
+            this.axios.get('/category_id=1').then(response=>[
+                console.log(response.data[1].name),
+                (this.kids = response.data),
+            ]).catch(error=>{
+                console.log(error)
+            })
+            
+        }
+       
+    }
+}
+</script>
+
+
 <style>
 :root {
     --dark-color-lighten: #f2f5ff;
@@ -354,7 +135,7 @@ a {
     text-decoration: none;
 }
 
-img.shoes {
+img.kids {
     max-width: 100%;
     height: 100%;
     user-select: none;

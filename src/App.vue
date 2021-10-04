@@ -290,5 +290,22 @@ img.backdrop{
   width:80%;
   height:100%;
 }
-
+li.answerlists{
+      list-style: none;
+    width: 50%;
+    float: left;
+    z-index:10;
+    position: relative;
+}
+.price {
+    font-size: 1.2rem!important;
+    font-weight: 500!important;
+}
+.padded{
+  margin-bottom: 100px;
+}
+button.cart{
+      border: none;
+    background: transparent;
+}
 </style>

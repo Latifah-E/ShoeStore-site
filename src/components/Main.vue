@@ -50,15 +50,16 @@
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <button class="nav-icon position-relative text-decoration-none cart"  data-toggle="modal" data-target="#cartModal">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
-                    </a>
+                    </button>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                     </a>
                 </div>
+                
             </div>
 
         </div>
@@ -73,12 +74,34 @@
             </div>
             <form action="" method="get" class="modal-content modal-body border-0 p-0">
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control searcher" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <input type="text" class="form-control searcher" id="inputModalSearch" name="q" v-model="search" placeholder="Search ...">
                     <button type="submit" class="input-group-text bg-success text-light">
                         <i class="fa fa-fw fa-search text-white"></i>
                     </button>
                 </div>
             </form>
+                     <li  v-for="answer in filteredAnswers" :key="answer" class="answerlists">
+                      <section class="card2">
+                         <div class="product-image">
+                          <img class="shoes path" :src="answer.path" alt="OFF-white Red Edition" draggable="false" />
+                       </div>
+                        <div class="product-info">
+                     <h2 class="name">{{answer.name}}</h2>
+                      <p class="brand">{{answer.brand}}</p>
+                     <div class="price">{{answer.price}}</div>
+                      </div>
+                           <div class="btn2">
+                       <button    class="buy-btn  button">Buy Now</button>
+                     <button class="fav carticon button">
+                  <a class="nav-icon position-relative text-decoration-none" href="#">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        
+                    </a>
+            </button>
+        </div>
+    </section>
+                    </li>
+            
         </div>
     </div>
 
@@ -287,6 +310,72 @@
 </template>
 <script>
  export default {
-     name:'main'
+     name:'main',
+       data(){
+        return {
+            search:"",
+           
+            answers:[{
+        name:'Jordan Point Lane',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids1.ab06ba24.svg'
+       },
+       {
+        name:'Nike Air Max 95',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids2.82038cca.svg'
+       },
+       {
+        name:'Jordan Flight Club',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids3.76d1941b.svg'
+       },
+       {
+        name:'Nike Crater Impact',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids4.e137f023.svg'
+       },
+       {
+        name:'Ozelia Shoes',brand:'Adidas', price:'$200',path:'http://localhost:8080/img/kids5.5f25ee6c.svg'
+       },
+        {
+        name:'NMD_R1 Monsters',brand:'Adidas', price:'$200',path:'http://localhost:8080/img/kids6.7ac87fef.svg'
+       },
+       {
+        name:'Adidas X Lego®',brand:'Adidas', price:'$200',path:'http://localhost:8080/img/kids1.ab06ba24.svg'
+       },
+       {
+        name:'ZX 360 Shoes',brand:'Reebok', price:'$150',path:'http://localhost:8080/img/kids7.73c47bae.svg'
+       },
+       {
+        name:'Jelly Belly Club',brand:'Reebok', price:'$100',path:'http://localhost:8080/img/kids8.6c31b657.svg'
+       },
+        {
+        name:'RS-Z College Toddler ',brand:'Puma', price:'$250',path:'http://localhost:8080/img/kids10.894e79ec.svg'
+       },
+       {
+        name:'Cruse Rider Roar AC',brand:'Puma', price:'$270',path:'http://localhost:8080/img/kids12.dd22fbcf.svg'
+       },
+       {
+        name:'Puma X BRATZ Cruise Rider',brand:'Puma', price:'$600',path:'http://localhost:8080/img/kids12.dd22fbcf.svg'
+       },
+       {
+        name:'Nike Air Huarache',brand:'Nike', price:'$100',path:'http://localhost:8080/img/womens1.00d5d191.svg'
+       },
+       
+    ]
+        }
+    },
+ 
+	
+    computed: {
+    filteredAnswers: function(){
+                return this.answers.filter((answer)=> {
+                this.search = this.search.toLowerCase();
+                if(this.search.length != 0) 
+                return answer.name.match(this.search) || answer.brand.match(this.search)
+            });
+    },
+            
+        
+}, 
+  methods: {
+//    addToCart(){
+//        this.cartItems.length + 1
+//        return this.cartItems.length
+//    }
+  }
  }
 </script>
