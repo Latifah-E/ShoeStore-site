@@ -50,7 +50,7 @@
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    <button class="nav-icon position-relative text-decoration-none cart"  data-toggle="modal" data-target="#cartModal">
+                    <button class="nav-icon position-relative text-decoration-none cart"  v-b-modal.modal-1>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
                     </button>
@@ -65,7 +65,167 @@
         </div>
     </nav>
     <!-- Close Header -->
+    <!-- cartModal -->
+      <b-modal id="modal-1" title="Cart Items" size="xl" >
+        <div class="heading">
+            Cart Items
+        </div>
+        <div class="main">
+            <b-table hover :items="cart" :fields="fields" responsive="sm" v-for="cart in carts" :key="cart.id">
+                  <template #cell(shoe)="" style="width:15%">
+                      <div class="shoe-container">
+                         <img :src="cart.path" class="checkout-shoe">                  
+                      </div>
+                  </template>
+                  <template #cell(quantity)="">
+                     <b-form-input type="number"></b-form-input>        
+                  </template>
+                  <template #cell(size)="">
+                     <b-form-select v-model="selected" :options="options"></b-form-select>    
+                  </template>
+                  <template #cell(actions)="">
+                     <button class="delete"><img src="../assets/delete.svg"></button>  
+                  </template>
+            </b-table>
+        </div>
+        <div class="totals">
+            
+            <div class="calculation">
+                 <div class="mytotal">
+                     <label class="label1">Total:</label><span class="price-padded">$1200.00</span>
+                     
+                     
+                 </div>
+                 <div class="mypromo">
+                     <label class="label1">After Tax:</label><span class="price-padded">$00.00</span>
+                 </div>
+                 <div class="mypromo">
+                     <label class="label1">Shipping:</label><span class="price-padded">$80.00</span>
+                 </div>
+                 <div class="mynet">
+                   <label class="label1">Net Total:</label><span class="price-padded">$1280.00</span>
+                 </div>
+            </div>
+        </div>
+        <div class="payment">
+            <button type="submit" class="login-btn" v-b-modal.modal-multi-3>Proceed to Checkout</button>
+        </div>
 
+  </b-modal>
+  <b-modal id="modal-multi-3" size="lg" ok-only>
+    <div class="row">
+        <div class="col-6 checkout-bg">
+            <img src="../assets/checkout.jpg">
+        </div>
+        <div class="col-6">
+            <div class="order-heading">
+                Order Summary
+            </div>
+            <div class="summary">7
+                <div class="mytotal">
+                     <label class="label2">Total:</label><span class="price-padded2">$1200.00</span>
+                     
+                     
+                 </div>
+                 <div class="mypromo">
+                     <label class="label2">After Tax:</label><span class="price-padded2">$00.00</span>
+                 </div>
+                 <div class="mypromo">
+                     <label class="label2">Shipping:</label><span class="price-padded2">$80.00</span>
+                 </div>
+                 <div class="mynet2">
+                   <label class="label2">Net Total:</label><span class="price-padded3">$1280.00</span>
+                 </div>
+            </div>
+            <div class="order-heading">
+               Address
+            </div>
+            <div class="adress-form">
+                <form>
+                    <div class="row form2">
+                        <div class="col-6 input">
+                            <b-form-input type="text" placeholder="Country"></b-form-input>
+                        </div>
+                         <div class="col-6 input2">
+                            <b-form-input type="text" placeholder="City"></b-form-input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7 input">
+                            <b-form-input type="text" placeholder="Address"></b-form-input>
+                        </div>
+                        <div class="col-5 input2">
+                            <b-form-input type="text" placeholder="Postal Code"></b-form-input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="order-heading">
+               Contact Details
+               <div class="input3">
+                   <b-form-input type="email" placeholder="Email"></b-form-input>
+                   <b-form-input type="text" placeholder="Phone Number"></b-form-input>
+               </div>
+            </div>
+            <div class="order-heading">
+               Payment Details
+            </div>
+            <div class="payment-proceed">
+                
+
+                      <div class="tab-content">
+                        <div class="tab-pane fade show active" id="nav-tab-card">
+                            
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="username">Full name (on the card)</label>
+                                    <input type="text" class="form-control" name="username" placeholder="" required="">
+                                </div> <!-- form-group.// -->
+
+                      <div class="form-group">
+                          <label for="cardNumber">Card number</label>
+                          <div class="input-group">
+                              <input type="text" class="form-control" name="cardNumber" placeholder="">
+                              <div class="input-group-append">
+                                  <span class="input-group-text text-muted cards">
+                                      <i class="fab fa-cc-visa"></i>
+                                      <i class="fab fa-cc-amex"></i>
+                                      <i class="fab fa-cc-mastercard"></i> 
+                                 </span>
+                                 </div>
+                       </div>
+                    </div> <!-- form-group.// -->
+
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label><span class="hidden-xs">Expiration</span> </label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="MM" name="">
+                                <input type="number" class="form-control" placeholder="YY" name="">
+                            </div>
+                     </div>
+             </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                    <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                    <input type="number" class="form-control" required="">
+                    </div> <!-- form-group.// -->
+                    </div>
+	</div> <!-- row.// -->
+	<button class="subscribe btn btn-primary btn-block" type="button"> Confirm  </button>
+	</form>
+</div> <!-- tab-pane.// -->
+
+</div> <!-- tab-content .// -->
+
+
+ <!-- card.// -->
+            </div>
+        </div>
+    </div>
+  </b-modal>
     <!-- Modal -->
     <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -316,7 +476,7 @@
             search:"",
            
             answers:[{
-        name:'Jordan Point Lane',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids1.ab06ba24.svg'
+        name:'Jordan Point Lane',brand:'Nike', price:'$200',path:'http://localhost:8000/img/kids1.ab06ba24.svg'
        },
        {
         name:'Nike Air Max 95',brand:'Nike', price:'$200',path:'http://localhost:8080/img/kids2.82038cca.svg'
@@ -355,12 +515,33 @@
         name:'Nike Air Huarache',brand:'Nike', price:'$100',path:'http://localhost:8080/img/womens1.00d5d191.svg'
        },
        
-    ]
+    ],
+    fields: [
+           {key:'shoe'},
+           {key:'name'},
+           {key:'brand'},
+           {key:'price'},
+           {key:'quantity'},
+           {key:'stock'},
+           {key:'size'},
+           {key:'actions'},
+    ],
+    products: [],
+    cart:[],
+     options: [
+          { value: null, text: 'Choose a size' },
+          { value: 'a', text: 'XS' },
+          { value: 'b', text: 'S' },
+          { value: 'c', text: 'M' },
+          { value: 'd', text: 'L'},
+          { value: 'e', text: 'XL'}
+        ]
         }
     },
  
 	
     computed: {
+         
     filteredAnswers: function(){
                 return this.answers.filter((answer)=> {
                 this.search = this.search.toLowerCase();
@@ -368,14 +549,27 @@
                 return answer.name.match(this.search) || answer.brand.match(this.search)
             });
     },
+    
             
         
 }, 
+mounted(){
+     this.init()
+},
   methods: {
-//    addToCart(){
-//        this.cartItems.length + 1
-//        return this.cartItems.length
-//    }
+      init(){
+            this.axios.get('/shoes').then(response=>[
+                console.log(response.data),
+                (this.products = response.data),
+            ]).catch(error=>{
+                console.log(error)
+            })
+            
+        },
+   addProductToCart(product){
+       this.$store.dispatch('addProductToCart',product)
+     
+   }
   }
  }
 </script>

@@ -28,19 +28,19 @@
                 <div class="row main-row">
                  <div class="row sneakers" id="kidsrow"  >
 
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="kid in kids" :key="kid">
+            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product.id">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="kids path" :src="kid.path"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.path"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
-            <h2 class="name">{{kid.name}}</h2>
-             <p class="brand">{{kid.brand}}</p>
-            <div class="price">${{kid.price}}</div>
+            <h2 class="name">{{product.name}}</h2>
+             <p class="brand">{{product.brand}}</p>
+            <div class="price">${{product.price}}</div>
         </div>
         <div class="btn2">
             <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button" >
+            <button class="fav carticon button" @click="addProductToCart(product)">
                   <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
@@ -65,7 +65,7 @@
 export default {
     data:function(){
         return {
-            kids:[],
+            products:[],
             isloading:false
         }
     },
@@ -75,15 +75,20 @@ export default {
     methods:{
         init(){
             this.axios.get('/category_id=1').then(response=>[
-                console.log(response.data[1].name),
-                (this.kids = response.data),
+                console.log(response.data),
+                (this.products = response.data),
             ]).catch(error=>{
                 console.log(error)
             })
             
-        }
+        },
+        addProductToCart(product){
+       this.$store.dispatch('addProductToCart',product)
+
+   }
        
-    }
+    },
+
 }
 </script>
 

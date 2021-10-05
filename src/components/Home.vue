@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left slide-right      ">
-                                <h1 class="h1 hometitle ">A must need for athletes</h1>
+                                <h1 class="h1 hometitle ">A must have for athletes</h1>
                                 <h3 class="h2">Ullamco laboris nisi ut </h3>
                                 <p>
                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

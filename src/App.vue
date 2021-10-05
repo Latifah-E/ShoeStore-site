@@ -6,9 +6,9 @@
 
 <script>
 
-
 export default {
-  name: 'App'
+  name: 'App',
+    
  
 }
 </script>
@@ -307,5 +307,156 @@ li.answerlists{
 button.cart{
       border: none;
     background: transparent;
+}
+.checkout-shoe{
+
+  width: 55%;
+}
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    width: 15%;
+}
+button.delete{
+  border: none;
+    background: none;
+    margin-left: 10px;
+
+}
+.totals{
+  
+    width: 100%;
+}
+label.label1 {
+    display: inline-block;
+    font-size: 21px!important;
+    padding-right: 13px;
+}
+.price-padded{
+
+    float: right;
+
+}
+.mynet{
+      border-top: #dfe2e6 2px solid;
+}
+.modal-footer{
+  display: none !important;
+}
+button.login-btn {
+    width: 100%;
+    background-image: linear-gradient( 
+90deg, rgba(0,0,0,1) 0%, rgba(83,83,83,1) 43%, rgb(158, 158, 158) 100%)!important;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px #eee;
+    transition: 0.5s;
+    background-size: 200% auto;
+    font-size: 16px;
+}
+button.login-btn:hover{
+    background-position: right center;
+}
+.payment{
+      text-align: right;
+}
+.checkout-bg img{
+  width:100%;
+      border-radius: 6px 0 0 6px!important;
+}
+.checkout-bg{
+  padding-left: 0px!important;
+}
+.heading2{
+  text-align:center;
+  font-size:25px!important;
+  padding-bottom: 20px;
+}
+#modal-multi-3___BV_modal_body_{
+  padding: 0!important;
+}
+.order-heading{
+      text-align: left;
+    font-size: 18px!important;
+    font-weight: bold!important;
+    padding-top: 8px;
+}
+.price-padded2{
+    padding-right: 40px;
+    float: right;
+        font-size: 16px!important;
+}
+.mynet2 {
+    border-top: #dfe2e6 1px solid;
+    width: 90%;
+}
+.price-padded3{
+    padding-right: 0px;
+    float: right;
+        font-size: 16px!important;
+}
+.input{
+  padding-right: 0!important;
+}
+.input2{
+      padding-left: 10px!important;
+      padding-right: 50px!important;
+}
+.form2{
+  margin-bottom: 10px;
+}
+.input input::placeholder{
+  font-size:15px
+}
+.input2 input::placeholder{
+  font-size:15px
+}
+.input3 {
+    padding-right: 40px!important;
+    padding-top: 10px;
+}
+.input3 input::placeholder{
+  font-size: 15px;
+}
+.input3 input{
+  margin-bottom:10px;
+}
+label.label2{
+      font-size: 16px!important;
+}
+label{
+      font-size: 16px!important;
+}
+.form-group{
+  padding-right: 40px;
+}
+span.cards{
+      padding: 12px;
+    border-radius: 0px 4px 4px 0px;
+}
+i.fab{
+  padding-right: 1px;
+}
+.form-control::placeholder{
+  font-size:15px;
+}
+button.subscribe{
+      padding: 9px 20px;
+    margin-top: 4px;
+        background-image: linear-gradient( 
+90deg, rgba(0,0,0,1) 0%, rgba(83,83,83,1) 43%, rgb(158, 158, 158) 100%)!important;
+    color: white;
+    border: none;
+    box-shadow: 0 0 20px #eee;
+    transition: 0.5s;
+    background-size: 200% auto;
+    font-size: 16px;
+}
+button.subscribe:hover{
+    background-position: right center;
 }
 </style>
