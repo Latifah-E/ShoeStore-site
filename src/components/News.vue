@@ -29,7 +29,7 @@
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...<a class="readmore" href="#">Read More</a>
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
             </div>
             
@@ -45,7 +45,8 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="heading">
-                    Addidas upcoming launch event
+                    Nike launches new slogan this month
+                 
                 </div>
                        <p class="par">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -59,7 +60,7 @@
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...<a class="readmore" href="#">Read More</a>
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
                     </p>
             </div>
             
@@ -75,7 +76,7 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="heading">
-                    Addidas upcoming launch event
+                     See why red might not be so bad
                 </div>
                        <p class="par">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -89,7 +90,7 @@
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...<a class="readmore" href="#">Read More</a>
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
             </div>
             
@@ -119,7 +120,7 @@
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...<a class="readmore" href="#">Read More</a>
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </p>
             </div>
             

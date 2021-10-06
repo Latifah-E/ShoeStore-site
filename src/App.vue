@@ -147,6 +147,8 @@ button.getbtn,a.getbtn{
     border: none;
     padding: 5px 20px;
     border-radius: 5px;
+    text-decoration: none;
+    color: black!important;
 
 }
 button.getbtn:hover,a.getbtn:hover{
@@ -446,7 +448,7 @@ i.fab{
 }
 button.subscribe{
       padding: 9px 20px;
-    margin-top: 4px;
+    margin-top: 15px;
         background-image: linear-gradient( 
 90deg, rgba(0,0,0,1) 0%, rgba(83,83,83,1) 43%, rgb(158, 158, 158) 100%)!important;
     color: white;
@@ -458,5 +460,21 @@ button.subscribe{
 }
 button.subscribe:hover{
     background-position: right center;
+}
+input.quantity{
+  width: 60%;
+    background: black;
+    color: white;
+}
+input.quantity::placeholder{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+button.carticon:hover{
+  background:#8a8989;
+}
+.left{
+  text-align: left;
 }
 </style>

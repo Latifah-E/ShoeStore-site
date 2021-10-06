@@ -6,9 +6,9 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            <router-link :to="{name:'home'}" class="navbar-brand text-success logo h1 align-self-center" >
                 <img src="../assets/Logo.svg" class="site-logo">
-            </a>
+            </router-link>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,12 +52,12 @@
                     </a>
                     <button class="nav-icon position-relative text-decoration-none cart"  v-b-modal.modal-1>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">0</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{carts.length}}</span>
                     </button>
-                    <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <!-- <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
-                    </a>
+                    </a> -->
                 </div>
                 
             </div>
@@ -71,20 +71,21 @@
             Cart Items
         </div>
         <div class="main">
-            <b-table hover :items="cart" :fields="fields" responsive="sm" v-for="cart in carts" :key="cart.id">
-                  <template #cell(shoe)="" style="width:15%">
+            <b-table hover :items="carts" :fields="fields" responsive="sm">
+                  <template #cell(path)="shoe" style="width:15%">
                       <div class="shoe-container">
-                         <img :src="cart.path" class="checkout-shoe">                  
+                         <img :src="shoe.value" class="checkout-shoe">                  
                       </div>
                   </template>
-                  <template #cell(quantity)="">
-                     <b-form-input type="number"></b-form-input>        
+                  <template #cell(price)="price">
+                     <p>${{price.value}}</p>  
                   </template>
+                 
                   <template #cell(size)="">
                      <b-form-select v-model="selected" :options="options"></b-form-select>    
                   </template>
                   <template #cell(actions)="">
-                     <button class="delete"><img src="../assets/delete.svg"></button>  
+                     <button class="delete" @click="removeItem(index)"><img src="../assets/delete.svg"></button>  
                   </template>
             </b-table>
         </div>
@@ -92,18 +93,16 @@
             
             <div class="calculation">
                  <div class="mytotal">
-                     <label class="label1">Total:</label><span class="price-padded">$1200.00</span>
+                     <label class="label1">Total:</label><span class="price-padded">${{total}}.00</span>
                      
                      
                  </div>
+               
                  <div class="mypromo">
-                     <label class="label1">After Tax:</label><span class="price-padded">$00.00</span>
-                 </div>
-                 <div class="mypromo">
-                     <label class="label1">Shipping:</label><span class="price-padded">$80.00</span>
+                     <label class="label1">Shipping:</label><span class="price-padded">${{shipping}}.00</span>
                  </div>
                  <div class="mynet">
-                   <label class="label1">Net Total:</label><span class="price-padded">$1280.00</span>
+                   <label class="label1">Net Total:</label><span class="price-padded">${{nettotal}}.00</span>
                  </div>
             </div>
         </div>
@@ -121,20 +120,17 @@
             <div class="order-heading">
                 Order Summary
             </div>
-            <div class="summary">7
+            <div class="summary">
                 <div class="mytotal">
-                     <label class="label2">Total:</label><span class="price-padded2">$1200.00</span>
+                     <label class="label2">Total:</label><span class="price-padded2">${{total}}.00</span>
                      
                      
                  </div>
                  <div class="mypromo">
-                     <label class="label2">After Tax:</label><span class="price-padded2">$00.00</span>
-                 </div>
-                 <div class="mypromo">
-                     <label class="label2">Shipping:</label><span class="price-padded2">$80.00</span>
+                     <label class="label2">Shipping:</label><span class="price-padded2">${{shipping}}.00</span>
                  </div>
                  <div class="mynet2">
-                   <label class="label2">Net Total:</label><span class="price-padded3">$1280.00</span>
+                   <label class="label2">Net Total:</label><span class="price-padded3">${{nettotal}}.00</span>
                  </div>
             </div>
             <div class="order-heading">
@@ -240,20 +236,20 @@
                     </button>
                 </div>
             </form>
-                     <li  v-for="answer in filteredAnswers" :key="answer" class="answerlists">
+                     <li  v-for="shoe in filteredAnswers" :key="shoe" class="answerlists">
                       <section class="card2">
                          <div class="product-image">
-                          <img class="shoes path" :src="answer.path" alt="OFF-white Red Edition" draggable="false" />
+                          <img class="shoes path" :src="shoe.path" alt="OFF-white Red Edition" draggable="false" />
                        </div>
                         <div class="product-info">
-                     <h2 class="name">{{answer.name}}</h2>
-                      <p class="brand">{{answer.brand}}</p>
-                     <div class="price">{{answer.price}}</div>
+                     <h2 class="name">{{shoe.name}}</h2>
+                      <p class="brand">{{shoe.brand}}</p>
+                     <div class="price">{{shoe.price}}</div>
                       </div>
-                           <div class="btn2">
-                       <button    class="buy-btn  button">Buy Now</button>
-                     <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
+                            <div class="btn2">
+            <b-form-input type="number" class="quantity" v-model="shoe.quantity" placeholder="Input Quantity"></b-form-input>
+            <button class="fav carticon button" @click="addProductToCart(shoe)">
+                  <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
                     </a>
@@ -469,6 +465,7 @@
 </div>
 </template>
 <script>
+ import store from '@/store/index'
  export default {
      name:'main',
        data(){
@@ -517,17 +514,17 @@
        
     ],
     fields: [
-           {key:'shoe'},
+           {key:'path'},
            {key:'name'},
            {key:'brand'},
            {key:'price'},
            {key:'quantity'},
-           {key:'stock'},
+        //    {key:'stock'},
            {key:'size'},
            {key:'actions'},
     ],
-    products: [],
-    cart:[],
+    shoes: [],
+  
      options: [
           { value: null, text: 'Choose a size' },
           { value: 'a', text: 'XS' },
@@ -540,36 +537,77 @@
     },
  
 	
-    computed: {
-         
-    filteredAnswers: function(){
-                return this.answers.filter((answer)=> {
-                this.search = this.search.toLowerCase();
+    computed: {    
+        products(){
+            return store.state.products
+        },
+         filteredAnswers: function(){
+            return this.shoes.filter((shoe)=> {
+                // this.search = this.search.toLowerCase();
                 if(this.search.length != 0) 
-                return answer.name.match(this.search) || answer.brand.match(this.search)
+                return  shoe.brand.match(this.search) || shoe.name.match(this.search)
+                console.log(shoe);
             });
-    },
-    
+        },
+        carts(){
+            console.log(this.$store.state.cart);
+            return this.$store.state.cart
+        },
+         total() {
+            let total = 0;
+            this.carts.forEach(cart => {
+            total += (cart.price * cart.quantity);
+        });
+            return total;
+        },
+        shipping() {
+             if (this.total > 0) {
+                let shipping = 60
+                return shipping
+             }else {
+                let shipping = 0
+                return shipping
+             }
+             
+        },
+        nettotal(){
+           
+            let nettotal = (this.shipping + this.total)
+            return nettotal
             
-        
-}, 
-mounted(){
+        }
+    }, 
+    created(){
+       this.init()
+    },
+    mounted(){
      this.init()
-},
-  methods: {
+    },
+    methods: {
       init(){
             this.axios.get('/shoes').then(response=>[
                 console.log(response.data),
-                (this.products = response.data),
+                (this.shoes = response.data),
             ]).catch(error=>{
                 console.log(error)
             })
             
         },
-   addProductToCart(product){
-       this.$store.dispatch('addProductToCart',product)
-     
-   }
+         removeItem(index) {
+      this.carts.splice(index, 1)
+    },
+     addProductToCart(product){
+            console.log(product)
+            this.$store.commit('pushProductToCart',product)
+            const Swal = require('sweetalert2')
+            Swal.fire({
+           
+             icon: 'success',
+            title: 'Your item has been added to cart',
+            showConfirmButton: false,
+             timer: 1500
+          })
+        }
   }
  }
 </script>

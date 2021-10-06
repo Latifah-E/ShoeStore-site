@@ -18,7 +18,7 @@
                                 <h1 class="h1 text-success hometitle ">New Merchansise this spring</h1>
                                 <h3 class="h2 home-sub"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                              Lorem ipsum dolor sit amet.</h3>
-                                           <button class="getbtn">Get Yours Now</button>
+                                           <router-link  class="getbtn" :to="{name:'mens'}">Get Yours Now</router-link >
                             </div>
                         </div>
                     </div>
@@ -91,17 +91,17 @@
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="../assets/women.svg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Women</h5>
-                <p class="text-center"><a class="btn getbtn">Go Shop</a></p>
+                <p class="text-center"><router-link  class="getbtn" :to="{name:'women'}">Go Shop</router-link></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="../assets/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Men</h2>
-                <p class="text-center"><a class="btn getbtn">Go Shop</a></p>
+                <p class="text-center"><router-link  class="getbtn" :to="{name:'mens'}">Go Shop</router-link></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
                 <a href="#"><img src="../assets/elegant.svg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Classy</h2>
-                <p class="text-center"><a class="btn getbtn">Go Shop</a></p>
+                <p class="text-center"><router-link  class="getbtn" :to="{name:'classy'}">Go Shop</router-link></p>
             </div>
         </div>
     </section>
@@ -133,8 +133,66 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
                             <p class="text-muted">Views (24)</p>
-                             <button class="getbtn">Read More</button>
+                             <button v-b-modal.modal-scrollable2 class="getbtn">Read More</button>
                         </div>
+                            <b-modal id="modal-scrollable2" size="xl" scrollable title="Scrollable Content">
+                              <div class="headline-img">
+                                 <div class="card h-100">
+                                  <a href="shop-single.html">
+                                    <img src="../assets/shoestore.svg" class="card-img-top" alt="...">
+                                  </a>
+                    
+                                </div> 
+                              </div>
+                              <div class="headline">
+                                  Addidas upcoming launch event
+                              </div>
+                              <div class="conetnt">
+                                  <p class="par">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        <br>
+                        <br>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+
+                    </p>
+                              </div>
+                           </b-modal>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
@@ -149,8 +207,66 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
                             <p class="text-muted">Views (36)</p>
-                             <button class="getbtn">Read More</button>
+                             <button class="getbtn" v-b-modal.modal-scrollable3 >Read More</button>
                         </div>
+                         <b-modal id="modal-scrollable3" size="xl" scrollable title="Scrollable Content">
+                              <div class="headline-img">
+                                 <div class="card h-100">
+                                  <a href="shop-single.html">
+                                    <img src="../assets/sloganred.svg" class="card-img-top" alt="...">
+                                  </a>
+                    
+                                </div> 
+                              </div>
+                              <div class="headline">
+                                  See why red might not be so bad
+                              </div>
+                              <div class="conetnt">
+                                  <p class="par">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        <br>
+                        <br>
+                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+
+                    </p>
+                              </div>
+                           </b-modal>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
@@ -160,7 +276,7 @@
                         </a>
                         <div class="card-body">
                            
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Nike launches new slogan</a>
+                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Nike launches new slogan this month</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -177,7 +293,7 @@
                                 </div> 
                               </div>
                               <div class="headline">
-                                  Nike launches new slogan
+                                  Nike launches new slogan this month
                               </div>
                               <div class="conetnt">
                                   <p class="par">

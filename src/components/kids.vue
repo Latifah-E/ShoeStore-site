@@ -39,14 +39,16 @@
             <div class="price">${{product.price}}</div>
         </div>
         <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
+            <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input>
             <button class="fav carticon button" @click="addProductToCart(product)">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
+                  <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
                     </a>
             </button>
         </div>
+      
+         
     </section>
             </div>
         </div>
@@ -73,6 +75,7 @@ export default {
         this.init()
     },
     methods:{
+        
         init(){
             this.axios.get('/category_id=1').then(response=>[
                 console.log(response.data),
@@ -83,9 +86,17 @@ export default {
             
         },
         addProductToCart(product){
-       this.$store.dispatch('addProductToCart',product)
-
-   }
+            console.log(product)
+            this.$store.commit('pushProductToCart',product)
+            const Swal = require('sweetalert2')
+            Swal.fire({
+           
+             icon: 'success',
+            title: 'Your item has been added to cart',
+            showConfirmButton: false,
+             timer: 1500
+          })
+        }
        
     },
 

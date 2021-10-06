@@ -18,33 +18,35 @@
      <div class="backdrop-title">
         <img src="../assets/womens-title.svg">
     </div>
-    <main class="container">
+        <main class="container">
     
         
      
             
                 <div class="row main-row">
-                 <div class="row sneakers">
+                 <div class="row sneakers" id="kidsrow"  >
 
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card" v-for="women in womens" :key="women">
+            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product.id">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="womens path" :src="women.path"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.path"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
-            <h2 class="name">{{women.name}}</h2>
-             <p class="brand">{{women.brand}}</p>
-            <div class="price">${{women.price}}</div>
+            <h2 class="name">{{product.name}}</h2>
+             <p class="brand">{{product.brand}}</p>
+            <div class="price">${{product.price}}</div>
         </div>
         <div class="btn2">
-            <button    class="buy-btn  button">Buy Now</button>
-            <button class="fav carticon button">
-                  <a class="nav-icon position-relative text-decoration-none" href="#">
+            <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input>
+            <button class="fav carticon button" @click="addProductToCart(product)">
+                  <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
                     </a>
             </button>
         </div>
+      
+         
     </section>
             </div>
         </div>
@@ -61,7 +63,7 @@
 export default {
     data:function(){
         return {
-            womens:[],
+            products:[],
             isloading:false
         }
     },
@@ -72,11 +74,23 @@ export default {
         init(){
             this.axios.get('/category_id=2').then(response=>[
                 console.log(response.data[1].name),
-                (this.womens = response.data),
+                (this.products = response.data),
             ]).catch(error=>{
                 console.log(error)
             })
             
+        },
+        addProductToCart(product){
+            console.log(product)
+            this.$store.commit('pushProductToCart',product)
+            const Swal = require('sweetalert2')
+            Swal.fire({
+           
+             icon: 'success',
+            title: 'Your item has been added to cart',
+            showConfirmButton: false,
+             timer: 1500
+          })
         }
        
     }

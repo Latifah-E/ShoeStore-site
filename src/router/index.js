@@ -10,7 +10,6 @@ import Kids from '@/components/kids'
 import Classy from '@/components/classy'
 import Contact from '@/components/Contact'
 import News from '@/components/News'
-import checkout from '@/components/checkout'
 
 Vue.use(Router)
 
@@ -61,11 +60,6 @@ export default new Router({
                         component:News,
                         name:'news'
                      },
-                     {
-                        path:'/checkout',
-                        component:checkout,
-                        name:'checkout'
-                     }
         ]
     }]
        
