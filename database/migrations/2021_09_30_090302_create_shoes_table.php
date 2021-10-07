@@ -20,8 +20,12 @@ class CreateShoesTable extends Migration
             $table->string('brand');
             $table->integer('category_id');
             $table->integer('stock');
-            $table->string('path');
-            $table->double('price');
+            $table->string('path1');
+            $table->string('path2');
+            $table->string('path3');
+            $table->string('path4');
+            $table->string('description');
+            $table->string('materials');
              
             $table->foreign('category_id')
                   ->references('id')

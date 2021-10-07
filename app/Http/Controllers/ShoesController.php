@@ -40,7 +40,12 @@ class ShoesController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'brand' => 'required',
-            'path' => 'required',
+            'path1' => 'required',
+            'path2' => 'required',
+            'path3' => 'required',
+            'path4' => 'required',
+            'description' => 'required',
+            'materials' => 'required',
             'category' => 'required',
         ]);
   
@@ -49,7 +54,12 @@ class ShoesController extends Controller
         $shoe->price = $request->input('price');  //retrieving user inputs
         $shoe->stock = $request->input('stock');  //retrieving user inputs
         $shoe->brand = $request->input('brand');  //retrieving user inputs
-        $shoe->path = $request->input('path');  //retrieving user inputs
+        $shoe->path1 = $request->input('path1');  //retrieving user inputs
+        $shoe->path2 = $request->input('path2');  //retrieving user inputs
+        $shoe->path3 = $request->input('path3');  //retrieving user inputs
+        $shoe->path4 = $request->input('path4');  //retrieving user inputs
+        $shoe->descrption = $request->input('description');  //retrieving user inputs
+        $shoe->materials= $request->input('materials');  //retrieving user inputs
         $shoe->category = $request->input('category');  //retrieving user inputs
         $shoe->save(); //storing values as an object
         return $shoe; //returns the stored value if the operation was successful.
@@ -93,7 +103,12 @@ class ShoesController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'brand' => 'required',
-            'path' => 'required',
+            'path1' => 'required',
+            'path2' => 'required',
+            'path3' => 'required',
+            'path4' => 'required',
+            'description' => 'required',
+            'materials' => 'required',
             'category' => 'required',
         ]);
   
@@ -102,7 +117,12 @@ class ShoesController extends Controller
         $shoe->price = $request->input('price');  //retrieving user inputs
         $shoe->stock = $request->input('stock');  //retrieving user inputs
         $shoe->brand = $request->input('brand');  //retrieving user inputs
-        $shoe->path = $request->input('path');  //retrieving user inputs
+        $shoe->path1 = $request->input('path1');  //retrieving user inputs
+        $shoe->path2 = $request->input('path2');  //retrieving user inputs
+        $shoe->path3 = $request->input('path3');  //retrieving user inputs
+        $shoe->path4 = $request->input('path4');  //retrieving user inputs
+        $shoe->descrption = $request->input('description');  //retrieving user inputs
+        $shoe->materials= $request->input('materials');  //retrieving user inputs
         $shoe->category = $request->input('category');  //retrieving user inputs
         $shoe->save();//saves the values in the database. The existing data is overwritten.
         return $shoe; // retrieves the updated object from the database
