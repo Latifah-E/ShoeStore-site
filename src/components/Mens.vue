@@ -32,7 +32,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product.id">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="kids path" :src="product.path"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.path1"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2 class="name">{{product.name}}</h2>
@@ -84,7 +84,15 @@ export default {
             })
             
         },
-        addProductToCart(product){
+         addProductToCart(product,x){
+            
+          if (isNaN(x)){
+              product.quantity = 1
+               
+            }else{
+            product.quantity = x
+            
+        }  
             console.log(product)
             this.$store.commit('pushProductToCart',product)
             const Swal = require('sweetalert2')
@@ -95,6 +103,7 @@ export default {
             showConfirmButton: false,
              timer: 1500
           })
+            
         }
        
     }

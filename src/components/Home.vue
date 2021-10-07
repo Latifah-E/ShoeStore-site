@@ -18,7 +18,7 @@
                                 <h1 class="h1 text-success hometitle ">New Merchansise this spring</h1>
                                 <h3 class="h2 home-sub"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                              Lorem ipsum dolor sit amet.</h3>
-                                           <router-link  class="getbtn" :to="{name:'mens'}">Get Yours Now</router-link >
+                                           <router-link  class="getbtn" :to="{name:'mens'}">Browse More</router-link >
                             </div>
                         </div>
                     </div>
@@ -89,17 +89,17 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="../assets/women.svg" class="rounded-circle img-fluid border"></a>
+                <a  ><img src="../assets/women.svg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Women</h5>
                 <p class="text-center"><router-link  class="getbtn" :to="{name:'women'}">Go Shop</router-link></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="../assets/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+                <a  ><img src="../assets/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Men</h2>
                 <p class="text-center"><router-link  class="getbtn" :to="{name:'mens'}">Go Shop</router-link></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="../assets/elegant.svg" class="rounded-circle img-fluid border"></a>
+                <a  ><img src="../assets/elegant.svg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Classy</h2>
                 <p class="text-center"><router-link  class="getbtn" :to="{name:'classy'}">Go Shop</router-link></p>
             </div>
@@ -123,12 +123,12 @@
             <div class="row">
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/shoestore.svg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                            
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Addidas upcoming launch event</a>
+                            <a    class="h2 text-decoration-none text-dark">Addidas upcoming launch event</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -138,7 +138,7 @@
                             <b-modal id="modal-scrollable2" size="xl" scrollable title="Scrollable Content">
                               <div class="headline-img">
                                  <div class="card h-100">
-                                  <a href="shop-single.html">
+                                  <a   >
                                     <img src="../assets/shoestore.svg" class="card-img-top" alt="...">
                                   </a>
                     
@@ -197,12 +197,12 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/sloganred.svg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                            
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">See why red might not be so bad</a>
+                            <a    class="h2 text-decoration-none text-dark">See why red might not be so bad</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -212,7 +212,7 @@
                          <b-modal id="modal-scrollable3" size="xl" scrollable title="Scrollable Content">
                               <div class="headline-img">
                                  <div class="card h-100">
-                                  <a href="shop-single.html">
+                                  <a   >
                                     <img src="../assets/sloganred.svg" class="card-img-top" alt="...">
                                   </a>
                     
@@ -271,12 +271,12 @@
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/slogan.svg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                            
-                            <a href="shop-single.html" class="h2 text-decoration-none text-dark">Nike launches new slogan this month</a>
+                            <a    class="h2 text-decoration-none text-dark">Nike launches new slogan this month</a>
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
                             </p>
@@ -286,7 +286,7 @@
                              <b-modal id="modal-scrollable" size="xl" scrollable title="Scrollable Content">
                               <div class="headline-img">
                                  <div class="card h-100">
-                                  <a href="shop-single.html">
+                                  <a   >
                                     <img src="../assets/slogan.svg" class="card-img-top" alt="...">
                                   </a>
                     

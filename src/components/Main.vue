@@ -47,14 +47,14 @@
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                    <a class="nav-icon d-none d-lg-inline"   data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
                     <button class="nav-icon position-relative text-decoration-none cart"  v-b-modal.modal-1>
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{carts.length}}</span>
                     </button>
-                    <!-- <a class="nav-icon position-relative text-decoration-none" href="#">
+                    <!-- <a class="nav-icon position-relative text-decoration-none"  >
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                     </a> -->
@@ -72,7 +72,7 @@
         </div>
         <div class="main">
             <b-table hover :items="carts" :fields="fields" responsive="sm">
-                  <template #cell(path)="shoe" style="width:15%">
+                  <template #cell(path1)="shoe" style="width:15%">
                       <div class="shoe-container">
                          <img :src="shoe.value" class="checkout-shoe">                  
                       </div>
@@ -136,32 +136,33 @@
             <div class="order-heading">
                Address
             </div>
+            <form  role="form">
             <div class="adress-form">
-                <form>
+                
                     <div class="row form2">
                         <div class="col-6 input">
-                            <b-form-input type="text" placeholder="Country"></b-form-input>
+                            <b-form-input type="text"  v-model="submit" placeholder="Country" required></b-form-input>
                         </div>
                          <div class="col-6 input2">
-                            <b-form-input type="text" placeholder="City"></b-form-input>
+                            <b-form-input type="text" v-model="submit" placeholder="City"  required></b-form-input>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-7 input">
-                            <b-form-input type="text" placeholder="Address"></b-form-input>
+                            <b-form-input type="text" v-model="submit" placeholder="Address"  required></b-form-input>
                         </div>
                         <div class="col-5 input2">
-                            <b-form-input type="text" placeholder="Postal Code"></b-form-input>
+                            <b-form-input type="text" v-model="submit" placeholder="Postal Code"  required></b-form-input>
                         </div>
                     </div>
-                </form>
+                
             </div>
 
             <div class="order-heading">
                Contact Details
                <div class="input3">
-                   <b-form-input type="email" placeholder="Email"></b-form-input>
-                   <b-form-input type="text" placeholder="Phone Number"></b-form-input>
+                   <b-form-input type="email" v-model="submit" placeholder="Email"  required></b-form-input>
+                   <b-form-input type="number"  v-model="submit" placeholder="Phone Number"  required></b-form-input>
                </div>
             </div>
             <div class="order-heading">
@@ -173,16 +174,16 @@
                       <div class="tab-content">
                         <div class="tab-pane fade show active" id="nav-tab-card">
                             
-                            <form role="form">
+                            
                                 <div class="form-group">
                                     <label for="username">Full name (on the card)</label>
-                                    <input type="text" class="form-control" name="username" placeholder="" required="">
+                                    <input type="text" v-model="submit" class="form-control" name="username" placeholder="" required>
                                 </div> <!-- form-group.// -->
 
                       <div class="form-group">
                           <label for="cardNumber">Card number</label>
                           <div class="input-group">
-                              <input type="text" class="form-control" name="cardNumber" placeholder="">
+                              <input type="number" v-model="submit"  class="form-control"  required name="cardNumber" placeholder="">
                               <div class="input-group-append">
                                   <span class="input-group-text text-muted cards">
                                       <i class="fab fa-cc-visa"></i>
@@ -198,20 +199,20 @@
                         <div class="form-group">
                             <label><span class="hidden-xs">Expiration</span> </label>
                             <div class="input-group">
-                                <input type="number" class="form-control" placeholder="MM" name="">
-                                <input type="number" class="form-control" placeholder="YY" name="">
+                                <input type="number" v-model="submit" required class="form-control" placeholder="MM" name="">
+                                <input type="number" v-model="submit"   required class="form-control" placeholder="YY" name="">
                             </div>
                      </div>
              </div>
               <div class="col-sm-4">
                 <div class="form-group">
-                    <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
-                    <input type="number" class="form-control" required="">
+                    <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i v-b-tooltip.hover title="3 digits code on back side of the card" class="fa fa-question-circle"></i></label>
+                    <input type="number" v-model="submit" class="form-control" required="">
                     </div> <!-- form-group.// -->
                     </div>
 	</div> <!-- row.// -->
-	<button class="subscribe btn btn-primary btn-block" type="button"> Confirm  </button>
-	</form>
+
+	
 </div> <!-- tab-pane.// -->
 
 </div> <!-- tab-content .// -->
@@ -219,6 +220,8 @@
 
  <!-- card.// -->
             </div>
+             <button class="subscribe btn btn-primary btn-block" @click="next(submit)"> Confirm  </button>
+       </form>
         </div>
     </div>
   </b-modal>
@@ -281,7 +284,7 @@
                     <div class="row d-flex flex-row">
                         <!--Controls-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="prev">
+                            <a class="h1"   role="button" data-bs-slide="prev">
                                 <i class="text-light fas fa-chevron-left"></i>
                             </a>
                         </div>
@@ -297,16 +300,16 @@
                                     <div class="carousel-item active">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -316,16 +319,16 @@
                                     <div class="carousel-item">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -335,16 +338,16 @@
                                     <div class="carousel-item">
                                         <div class="row">
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_01.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_02.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_03.png" alt="Brand Logo"></a>
                                             </div>
                                             <div class="col-3 p-md-5">
-                                                <a href="#"><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
+                                                <a  ><img class="img-fluid brand-img" src="../assets/brand_04.png" alt="Brand Logo"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -358,7 +361,7 @@
 
                         <!--Controls-->
                         <div class="col-1 align-self-center">
-                            <a class="h1" href="#templatemo-slide-brand" role="button" data-bs-slide="next">
+                            <a class="h1"   role="button" data-bs-slide="next">
                                 <i class="text-light fas fa-chevron-right"></i>
                             </a>
                         </div>
@@ -385,11 +388,11 @@
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">+255 753 068 823</a>
+                            <a class="text-decoration-none" href="tel:255 753 068 823">+255 753 068 823</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="mailto:info@company.com">info@teeshoes.com</a>
+                            <a class="text-decoration-none" href="mailto:info@teeshoes.com">info@teeshoes.com</a>
                         </li>
                     </ul>
                 </div>
@@ -397,22 +400,22 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Kid's shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        <li><router-link :to="{name:'kids'}" class="text-decoration-none" >Kid's Shoes</router-link></li>
+                        <li><router-link :to="{name:'women'}" class="text-decoration-none" >Women's Shoes</router-link></li>
+                        <li><router-link :to="{name:'men'}" class="text-decoration-none" >Mens's Shoes</router-link></li>
+                        <li><router-link :to="{name:'classy'}" class="text-decoration-none" >Classy Shoes</router-link></li>
+                        
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><router-link :to="{name:'home'}" class="text-decoration-none" >Home</router-link></li>
+                        <li><router-link :to="{name:'about'}" class="text-decoration-none" >About</router-link></li>
+                        <li><router-link :to="{name:'contact'}" class="text-decoration-none" >Shop Location</router-link></li>
+                        <li><router-link :to="{name:'home'}" class="text-decoration-none" >FAQ's</router-link></li>
+                        <li><router-link :to="{name:'contact'}" class="text-decoration-none" >Contact Us</router-link></li>
                     </ul>
                 </div>
 
@@ -425,7 +428,7 @@
                 <div class="col-auto me-auto">
                     <ul class="list-inline text-left footer-icons">
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://www.facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
                             <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
@@ -441,8 +444,8 @@
                 <div class="col-auto">
                     <label class="sr-only" for="subscribeEmail">Email address</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                        <div class="input-group-text  subs">Subscribe</div>
+                        <input type="email" v-model="email" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address" style="color:white;">
+                        <button type="submit" class="input-group-text  subs" >Subscribe</button>
                     </div>
                 </div>
             </div>
@@ -465,6 +468,7 @@
 </div>
 </template>
 <script>
+  
  import store from '@/store/index'
  export default {
      name:'main',
@@ -536,7 +540,7 @@
         }
     },
  
-	
+ 
     computed: {    
         products(){
             return store.state.products
@@ -584,6 +588,20 @@
      this.init()
     },
     methods: {
+        next(submit){
+            if(submit.length != 0){
+                    const Swal = require('sweetalert2')
+            Swal.fire({
+           
+             
+            title: 'We will process your order shorty',
+            showConfirmButton: false,
+             timer: 3000
+          })
+            }
+           
+            
+        },
       init(){
             this.axios.get('/shoes').then(response=>[
                 console.log(response.data),
@@ -610,4 +628,5 @@
         }
   }
  }
+ 
 </script>

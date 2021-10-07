@@ -27,10 +27,10 @@
                 <div class="row main-row">
                  <div class="row sneakers" id="kidsrow"  >
 
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product.id">
+            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="kids path" :src="product.path"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.path1"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2 class="name">{{product.name}}</h2>
@@ -38,7 +38,10 @@
             <div class="price">${{product.price}}</div>
         </div>
         <div class="btn2">
-            <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input>
+            <button  class="getbtn2" @click="getDetails(product)">Preview  Shoe</button>
+
+            
+            <!-- <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input> -->
             <button class="fav carticon button" @click="addProductToCart(product)">
                   <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -49,6 +52,49 @@
       
          
     </section>
+    <b-modal size="lg" :id="product.id" @hidden="clearProductDetails">
+     <h2 class="modaltitle">{{ product.name }}</h2>
+     <div class="row">
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path2"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path3"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path4"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+         <div class="col-6 description">
+             <label class="modallabel">Description</label>
+             <p>
+                 {{product.descrption}}
+             </p>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-6 materials">
+             <label class="modallabel">Composition</label><br>
+             <div class="composition">
+                 {{product.materials}}
+             </div>
+         </div>
+         <div class="col-6 size">
+             <label class="modallabel">Order Yours Now</label><br>
+               <span>Select Size: </span><b-form-select v-model="selected" class="select" :options="options"></b-form-select>
+               <b-form-input type="number" class="quantity"  v-model="product.quantity" placeholder="Input Quantity"></b-form-input> 
+               <button class="fav checkout carticon button" @click="addProductToCart(product)">
+                  <a class="nav-icon position-relative text-decoration-none">
+                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        
+                    </a>
+            </button>
+         </div>
+
+     </div>
+  </b-modal>
+    
             </div>
         </div>
                 </div>
@@ -58,6 +104,8 @@
        
     
     </main>
+     
+     
 </div>
 </template>
 <script>
@@ -65,6 +113,14 @@ export default {
     data:function(){
         return {
             products:[],
+            options: [
+          { value: null, text: 'Choose a size' },
+          { value: 'a', text: 'XS' },
+          { value: 'b', text: 'S' },
+          { value: 'c', text: 'M' },
+          { value: 'd', text: 'L'},
+          { value: 'e', text: 'XL'}
+        ],
             isloading:false
         }
     },
@@ -72,6 +128,14 @@ export default {
         this.init()
     },
     methods:{
+        getDetails(item){
+        this.product = item;
+        this.$bvModal.show(this.product.id)
+        },
+        
+      clearClientInfo() {
+        this.product = {}
+      },
         init(){
             this.axios.get('/category_id=3').then(response=>[
                 console.log(response.data[1].name),
@@ -81,7 +145,15 @@ export default {
             })
             
         },
-        addProductToCart(product){
+         addProductToCart(product,x){
+            
+          if (isNaN(x)){
+              product.quantity = 1
+               
+            }else{
+            product.quantity = x
+            
+        }  
             console.log(product)
             this.$store.commit('pushProductToCart',product)
             const Swal = require('sweetalert2')
@@ -92,6 +164,7 @@ export default {
             showConfirmButton: false,
              timer: 1500
           })
+            
         }
        
     }

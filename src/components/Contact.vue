@@ -20,28 +20,28 @@
     <!-- Start Contact -->
     <div class="container py-5">
         <div class="row py-5">
-            <form class="col-md-9 m-auto left" method="post" role="form">
+            <form class="col-md-9 m-auto left"  role="form">
                 <div class="row">
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputname">Name</label>
-                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Name">
+                        <input type="text" required class="form-control mt-1" v-model="contact" id="name" name="name" placeholder="Name">
                     </div>
                     <div class="form-group col-md-6 mb-3">
                         <label for="inputemail">Email</label>
-                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Email">
+                        <input type="email" required class="form-control mt-1" v-model="contact" id="email" name="email" placeholder="Email">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="inputsubject">Subject</label>
-                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Subject">
+                    <input type="text" class="form-control mt-1" v-model="contact" id="subject" name="subject" placeholder="Subject">
                 </div>
                 <div class="mb-3">
                     <label for="inputmessage">Message</label>
-                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Message" rows="8"></textarea>
+                    <textarea class="form-control mt-1"  id="message" v-model="contact" name="message" placeholder="Message" rows="8"></textarea>
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn getbtn btn-lg px-3">Let’s Talk</button>
+                        <button @click="confirmed(contact)" class="btn getbtn btn-lg px-3">Let’s Talk</button>
                     </div>
                 </div>
             </form>
@@ -49,3 +49,22 @@
     </div> 
 </div>
 </template>
+<script>
+
+export default({
+    methods: {
+        confirmed(contact){
+            if(contact.length != 0){
+             const Swal = require('sweetalert2')
+            Swal.fire({
+           
+            
+            title: 'We will contact you shortly',
+            showConfirmButton: false,
+             timer: 1500
+          })
+            }
+        }
+    },
+})
+</script>

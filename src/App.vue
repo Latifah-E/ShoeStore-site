@@ -461,13 +461,15 @@ button.subscribe{
 button.subscribe:hover{
     background-position: right center;
 }
-input.quantity{
-  width: 60%;
-    background: black;
+input.quantity {
+    width: 65%;
+    background: #bdc1c3;
     color: white;
+    border: #767777 solid 2px ;
+    margin-top: 24px;
 }
 input.quantity::placeholder{
-    color: white;
+    color: black;
     text-align: center;
     font-size: 16px;
 }
@@ -476,5 +478,51 @@ button.carticon:hover{
 }
 .left{
   text-align: left;
+}
+button.getbtn2{
+    background: #bcbcbc;
+    border: none;
+    padding: 7px 27px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black!important;
+}
+.description{
+      padding-top: 150px!important;
+}
+label.modallabel{
+      font-size: 30px!important;
+    font-weight: bold!important;
+    padding-bottom: 20px;
+}
+.composition{
+  width:50%
+}
+.custom-select::placeholder{
+  color: black;
+}
+.size span{
+  padding-right:75px
+}
+.checkout{
+      float: right;
+    margin-right: 70px;
+    top: -42px;
+    position: relative;
+}
+.materials{
+  padding-left:50px!important;
+}
+.select{
+padding-left:30px!important;
+}
+h2.modaltitle{
+      text-transform: capitalize;
+    font-weight: bold;
+    /* border-bottom: 1px black solid; */
+    text-align: center;
+}
+.description{
+  padding-right: 30px;
 }
 </style>

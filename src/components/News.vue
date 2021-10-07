@@ -7,7 +7,7 @@
         <div class="row news-article">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
                <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/shoestore.svg" class="card-img-top" alt="...">
                         </a>
                     
@@ -37,7 +37,7 @@
         <div class="row news-article">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
                <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/slogan.svg" class="card-img-top" alt="...">
                         </a>
                     
@@ -68,7 +68,7 @@
         <div class="row news-article">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
                <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/sloganred.svg" class="card-img-top" alt="...">
                         </a>
                     
@@ -98,7 +98,7 @@
         <div class="row news-article">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
                <div class="card h-100">
-                        <a href="shop-single.html">
+                        <a   >
                             <img src="../assets/shoestore.svg" class="card-img-top" alt="...">
                         </a>
                     
