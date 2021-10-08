@@ -40,7 +40,7 @@ class ShoesController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'brand' => 'required',
-            'path1' => 'required',
+            'shoe' => 'required',
             'path2' => 'required',
             'path3' => 'required',
             'path4' => 'required',
@@ -54,7 +54,7 @@ class ShoesController extends Controller
         $shoe->price = $request->input('price');  //retrieving user inputs
         $shoe->stock = $request->input('stock');  //retrieving user inputs
         $shoe->brand = $request->input('brand');  //retrieving user inputs
-        $shoe->path1 = $request->input('path1');  //retrieving user inputs
+        $shoe->shoe = $request->input('shoe');  //retrieving user inputs
         $shoe->path2 = $request->input('path2');  //retrieving user inputs
         $shoe->path3 = $request->input('path3');  //retrieving user inputs
         $shoe->path4 = $request->input('path4');  //retrieving user inputs
@@ -103,7 +103,7 @@ class ShoesController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'brand' => 'required',
-            'path1' => 'required',
+            'shoe' => 'required',
             'path2' => 'required',
             'path3' => 'required',
             'path4' => 'required',
@@ -117,7 +117,7 @@ class ShoesController extends Controller
         $shoe->price = $request->input('price');  //retrieving user inputs
         $shoe->stock = $request->input('stock');  //retrieving user inputs
         $shoe->brand = $request->input('brand');  //retrieving user inputs
-        $shoe->path1 = $request->input('path1');  //retrieving user inputs
+        $shoe->shoe = $request->input('shoe');  //retrieving user inputs
         $shoe->path2 = $request->input('path2');  //retrieving user inputs
         $shoe->path3 = $request->input('path3');  //retrieving user inputs
         $shoe->path4 = $request->input('path4');  //retrieving user inputs

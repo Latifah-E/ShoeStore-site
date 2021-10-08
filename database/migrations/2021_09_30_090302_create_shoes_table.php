@@ -20,7 +20,7 @@ class CreateShoesTable extends Migration
             $table->string('brand');
             $table->integer('category_id');
             $table->integer('stock');
-            $table->string('path1');
+            $table->string('shoe');
             $table->string('path2');
             $table->string('path3');
             $table->string('path4');
