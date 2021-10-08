@@ -28,10 +28,10 @@
                 <div class="row main-row">
                  <div class="row sneakers" id="kidsrow"  >
 
-            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product.id">
+            <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="kids path" :src="product.path1"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.shoe"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2 class="name">{{product.name}}</h2>
@@ -39,17 +39,72 @@
             <div class="price">${{product.price}}</div>
         </div>
         <div class="btn2">
-            <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input>
-            <button class="fav carticon button" @click="addProductToCart(product,product.quantity);">
+            <button  class="getbtn2" @click="getDetails(product)">Preview  Shoe</button>
+
+            
+            <!-- <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input> -->
+           
+        </div>
+      
+         
+    </section>
+     <b-modal size="lg" :id="product.id" @hidden="clearProductDetails">
+     <h2 class="modaltitle">{{product.brand}}'s {{ product.name }}</h2>
+     <div class="row">
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path2"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path3"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-6 preview">
+             <img class="kids path" :src="product.path4"  alt="OFF-white Red Edition" draggable="false" />
+         </div>
+         <div class="col-6 description">
+             <label class="modallabel">Description</label>
+             <p>
+                 {{product.descrption}}
+             </p>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-6 materials">
+             <label class="modallabel">Composition</label><br>
+             <div class="composition">
+                 {{product.materials}}
+             </div>
+              <label class="modallabel">Price:</label><p class="price-label">${{product.price}}</p>
+         </div>
+         <div class="col-6 size">
+             <label class="modallabel">Order Yours Now</label><br>
+               <span>Select Size: </span><select class="form-select select" required v-model="product.size" aria-label="Default select example">
+                     <option selected>Select size</option>
+                     <option value="20">20</option>
+                     <option value="21">21</option>
+                     <option value="22">22</option>
+                     <option value="23">23</option>
+                     <option value="24">24</option>
+                     <option value="25">25</option>
+                     <option value="26">26</option>
+                     <option value="27">27</option>
+                     <option value="28">28</option>
+                     <option value="29">29</option>
+                     <option value="30">30</option>
+                      </select>
+               <b-form-input type="number" class="quantity"  v-model="product.quantity" placeholder="Input Quantity"></b-form-input> 
+               <button class="fav checkout carticon button" @click="addProductToCart(product,product.quantity,product.size)">
                   <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
                     </a>
             </button>
-        </div>
-      
-         
-    </section>
+         </div>
+
+     </div>
+  </b-modal>
+    
             </div>
         </div>
                 </div>
@@ -62,20 +117,11 @@
 </div>
 </template>
 
-
 <script>
 export default {
     data:function(){
         return {
             products:[],
-            options: [
-          { value: null, text: 'Choose a size' },
-          { value: 'a', text: 'XS' },
-          { value: 'b', text: 'S' },
-          { value: 'c', text: 'M' },
-          { value: 'd', text: 'L'},
-          { value: 'e', text: 'XL'}
-        ],
             isloading:false
         }
     },
@@ -83,26 +129,37 @@ export default {
         this.init()
     },
     methods:{
+        getDetails(item){
+        this.product = item;
+        this.$bvModal.show(this.product.id)
+        },
         
+      clearClientInfo() {
+        this.product = {}
+      },
         init(){
             this.axios.get('/category_id=1').then(response=>[
-                console.log(response.data),
+                console.log(response.data[1].name),
                 (this.products = response.data),
             ]).catch(error=>{
                 console.log(error)
             })
             
         },
-        addProductToCart(product,x){
+         addProductToCart(product,x,y){
             
-          if (isNaN(x)){
-              product.quantity = 1
+          if (isNaN(x) || x <= 0 || y == null){
+              const Swal = require('sweetalert2')
+              Swal.fire({
+             text: 'Please enter valid data and try again',
+             icon: 'error',
+             title: 'Error!',
+            
+          })
+            
                
             }else{
-            product.quantity = x
-            
-        }  
-            console.log(product)
+             console.log(product)
             this.$store.commit('pushProductToCart',product)
             const Swal = require('sweetalert2')
             Swal.fire({
@@ -114,13 +171,12 @@ export default {
           })
             
         }
-       
+     
             
         }
        
     }
-
-
+}
 </script>
 
 

@@ -72,17 +72,13 @@
         </div>
         <div class="main">
             <b-table hover :items="carts" :fields="fields" responsive="sm">
-                  <template #cell(path1)="shoe" style="width:15%">
+                  <template #cell(shoe)="path" style="width:15%">
                       <div class="shoe-container">
-                         <img :src="shoe.value" class="checkout-shoe">                  
+                         <img :src="path.value" class="checkout-shoe">                  
                       </div>
                   </template>
                   <template #cell(price)="price">
                      <p>${{price.value}}</p>  
-                  </template>
-                 
-                  <template #cell(size)="">
-                     <b-form-select v-model="selected" :options="options"></b-form-select>    
                   </template>
                   <template #cell(actions)="">
                      <button class="delete" @click="removeItem(index)"><img src="../assets/delete.svg"></button>  
@@ -107,7 +103,7 @@
             </div>
         </div>
         <div class="payment">
-            <button type="submit" class="login-btn" v-b-modal.modal-multi-3>Proceed to Checkout</button>
+            <button type="submit" class="login-btn" v-b-modal.modal-multi-3 v-bind:class="{ active: isActive(nettotal) }">Proceed to Checkout</button>
         </div>
 
   </b-modal>
@@ -141,18 +137,18 @@
                 
                     <div class="row form2">
                         <div class="col-6 input">
-                            <b-form-input type="text"  v-model="submit" placeholder="Country" required></b-form-input>
+                            <b-form-input type="text"  v-model="country" placeholder="Country" required></b-form-input>
                         </div>
                          <div class="col-6 input2">
-                            <b-form-input type="text" v-model="submit" placeholder="City"  required></b-form-input>
+                            <b-form-input type="text" v-model="city" placeholder="City"  required></b-form-input>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-7 input">
-                            <b-form-input type="text" v-model="submit" placeholder="Address"  required></b-form-input>
+                            <b-form-input type="text"  v-model="address" placeholder="Address"  required></b-form-input>
                         </div>
                         <div class="col-5 input2">
-                            <b-form-input type="text" v-model="submit" placeholder="Postal Code"  required></b-form-input>
+                            <b-form-input type="text" v-model="postal" placeholder="Postal Code"  required></b-form-input>
                         </div>
                     </div>
                 
@@ -161,8 +157,8 @@
             <div class="order-heading">
                Contact Details
                <div class="input3">
-                   <b-form-input type="email" v-model="submit" placeholder="Email"  required></b-form-input>
-                   <b-form-input type="number"  v-model="submit" placeholder="Phone Number"  required></b-form-input>
+                   <b-form-input type="email" v-model="email" placeholder="Email"  required></b-form-input>
+                   <b-form-input type="number"  v-model="phone" placeholder="Phone Number"  required></b-form-input>
                </div>
             </div>
             <div class="order-heading">
@@ -177,13 +173,13 @@
                             
                                 <div class="form-group">
                                     <label for="username">Full name (on the card)</label>
-                                    <input type="text" v-model="submit" class="form-control" name="username" placeholder="" required>
+                                    <input type="text" v-model="name" class="form-control" name="username" placeholder="" required>
                                 </div> <!-- form-group.// -->
 
                       <div class="form-group">
                           <label for="cardNumber">Card number</label>
                           <div class="input-group">
-                              <input type="number" v-model="submit"  class="form-control"  required name="cardNumber" placeholder="">
+                              <input type="number" v-model="card"  class="form-control"  required name="cardNumber" placeholder="">
                               <div class="input-group-append">
                                   <span class="input-group-text text-muted cards">
                                       <i class="fab fa-cc-visa"></i>
@@ -199,15 +195,15 @@
                         <div class="form-group">
                             <label><span class="hidden-xs">Expiration</span> </label>
                             <div class="input-group">
-                                <input type="number" v-model="submit" required class="form-control" placeholder="MM" name="">
-                                <input type="number" v-model="submit"   required class="form-control" placeholder="YY" name="">
+                                <input type="number" v-model="month" required class="form-control" placeholder="MM" name="">
+                                <input type="number" v-model="year"   required class="form-control" placeholder="YY" name="">
                             </div>
                      </div>
              </div>
               <div class="col-sm-4">
                 <div class="form-group">
                     <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i v-b-tooltip.hover title="3 digits code on back side of the card" class="fa fa-question-circle"></i></label>
-                    <input type="number" v-model="submit" class="form-control" required="">
+                    <input type="number" v-model="cvv" class="form-control" required="">
                     </div> <!-- form-group.// -->
                     </div>
 	</div> <!-- row.// -->
@@ -220,14 +216,15 @@
 
  <!-- card.// -->
             </div>
-             <button class="subscribe btn btn-primary btn-block" @click="next(submit)"> Confirm  </button>
+             
        </form>
+       <button class="subscribe btn btn-primary btn-block" @click="next(country,city,address,postal,email,phone,name,card,month,year,cvv)"> Confirm  </button>
         </div>
     </div>
   </b-modal>
     <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+    <div class="modal fade bg-white" data-backdrop="static" data-keyboard="false" id="templatemo_search"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="dialog">
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -242,7 +239,7 @@
                      <li  v-for="shoe in filteredAnswers" :key="shoe" class="answerlists">
                       <section class="card2">
                          <div class="product-image">
-                          <img class="shoes path" :src="shoe.path" alt="OFF-white Red Edition" draggable="false" />
+                          <img class="shoes path" :src="shoe.shoe" alt="OFF-white Red Edition" draggable="false" />
                        </div>
                         <div class="product-info">
                      <h2 class="name">{{shoe.name}}</h2>
@@ -250,8 +247,22 @@
                      <div class="price">{{shoe.price}}</div>
                       </div>
                             <div class="btn2">
-            <b-form-input type="number" class="quantity" v-model="shoe.quantity" placeholder="Input Quantity"></b-form-input>
-            <button class="fav carticon button" @click="addProductToCart(shoe)">
+           <select class="form-select select2" required v-model="shoe.size" aria-label="Default select example">
+                     <option selected>Select size</option>
+                     <option value="20">20</option>
+                     <option value="21">21</option>
+                     <option value="22">22</option>
+                     <option value="23">23</option>
+                     <option value="24">24</option>
+                     <option value="25">25</option>
+                     <option value="26">26</option>
+                     <option value="27">27</option>
+                     <option value="28">28</option>
+                     <option value="29">29</option>
+                     <option value="30">30</option>
+                      </select>
+               <b-form-input type="number" class="quantity2"  v-model="shoe.quantity" placeholder="Input Quantity"></b-form-input> 
+            <button class="fav carticon button" @click="addProductToCart(shoe,shoe.quantity,shoe.size )">
                   <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
@@ -475,7 +486,6 @@
        data(){
         return {
             search:"",
-           
             answers:[{
         name:'Jordan Point Lane',brand:'Nike', price:'$200',path:'http://localhost:8000/img/kids1.ab06ba24.svg'
        },
@@ -518,12 +528,11 @@
        
     ],
     fields: [
-           {key:'path'},
+           {key:'shoe'},
            {key:'name'},
            {key:'brand'},
            {key:'price'},
            {key:'quantity'},
-        //    {key:'stock'},
            {key:'size'},
            {key:'actions'},
     ],
@@ -580,6 +589,7 @@
             return nettotal
             
         }
+
     }, 
     created(){
        this.init()
@@ -588,16 +598,34 @@
      this.init()
     },
     methods: {
-        next(submit){
-            if(submit.length != 0){
+        next(a,b,c,d,e,f,g,h,i,j,k){
+            if(a == null || b == null || c == null|| d == null || e  == null|| f == null|| g == null|| h == null|| i == null|| j == null|| k == null){
+            const Swal = require('sweetalert2')
+              Swal.fire({
+             text: 'Please finish filling in all fields',
+             icon: 'error',
+             title: 'Error!',
+              })
+            }else{
+                if(f.length > 12 || f.length < 10 || h.length > 16 || h.length < 16 || i.length > 2 ||i > 31|| i.length < 2||  j.length > 2 || j.length < 2||  k.length > 3 || k.length < 3){
                     const Swal = require('sweetalert2')
-            Swal.fire({
+                   Swal.fire({
+                  text: 'Please enter valid data',
+                   icon: 'error',
+                  title: 'Error!',
+              })
+                
+                }else{
+                const Swal = require('sweetalert2')
+                   Swal.fire({
+                  text: 'We will process yout order shortly',
+                   icon: 'success',
+                  title: 'Success',
+              })
+              window.location.reload();
+                }
+                
            
-             
-            title: 'We will process your order shorty',
-            showConfirmButton: false,
-             timer: 3000
-          })
             }
            
             
@@ -614,8 +642,19 @@
          removeItem(index) {
       this.carts.splice(index, 1)
     },
-     addProductToCart(product){
-            console.log(product)
+     addProductToCart(product,x,y){
+           if (isNaN(x) || x <= 0 || y == null){
+              const Swal = require('sweetalert2')
+              Swal.fire({
+             text: 'Please enter valid data and try again',
+             icon: 'error',
+             title: 'Error!',
+            
+          })
+            
+               
+            }else{
+             console.log(product)
             this.$store.commit('pushProductToCart',product)
             const Swal = require('sweetalert2')
             Swal.fire({
@@ -625,6 +664,16 @@
             showConfirmButton: false,
              timer: 1500
           })
+            
+        }
+     
+        },
+        isActive(nettotal){
+            if (nettotal >= 1){
+                return false
+            }else{
+                return true
+            }
         }
   }
  }

@@ -30,7 +30,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 product-card kidsel" v-for="product in products" :key="product">
                <section class="card2" id="kids" >
         <div class="product-image">
-            <img class="kids path" :src="product.path1"  alt="OFF-white Red Edition" draggable="false" />
+            <img class="kids path" :src="product.shoe"  alt="OFF-white Red Edition" draggable="false" />
         </div>
         <div class="product-info">
             <h2 class="name">{{product.name}}</h2>
@@ -42,18 +42,13 @@
 
             
             <!-- <b-form-input type="number" class="quantity" v-model="product.quantity" placeholder="Input Quantity"></b-form-input> -->
-            <button class="fav carticon button" @click="addProductToCart(product)">
-                  <a class="nav-icon position-relative text-decoration-none">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        
-                    </a>
-            </button>
+           
         </div>
       
          
     </section>
     <b-modal size="lg" :id="product.id" @hidden="clearProductDetails">
-     <h2 class="modaltitle">{{ product.name }}</h2>
+     <h2 class="modaltitle">{{product.brand}}'s {{ product.name }}</h2>
      <div class="row">
          <div class="col-6 preview">
              <img class="kids path" :src="product.path2"  alt="OFF-white Red Edition" draggable="false" />
@@ -79,12 +74,26 @@
              <div class="composition">
                  {{product.materials}}
              </div>
+              <label class="modallabel">Price:</label><p class="price-label">${{product.price}}</p>
          </div>
          <div class="col-6 size">
              <label class="modallabel">Order Yours Now</label><br>
-               <span>Select Size: </span><b-form-select v-model="selected" class="select" :options="options"></b-form-select>
+               <span>Select Size: </span><select class="form-select select" required v-model="product.size" aria-label="Default select example">
+                     <option selected>Select size</option>
+                     <option value="37">37</option>
+                     <option value="38">38</option>
+                     <option value="39">39</option>
+                     <option value="40">40</option>
+                     <option value="41">41</option>
+                     <option value="42">42</option>
+                     <option value="43">43</option>
+                     <option value="44">44</option>
+                     <option value="45">45</option>
+                     <option value="46">46</option>
+                     <option value="47">47</option>
+                      </select>
                <b-form-input type="number" class="quantity"  v-model="product.quantity" placeholder="Input Quantity"></b-form-input> 
-               <button class="fav checkout carticon button" @click="addProductToCart(product)">
+               <button class="fav checkout carticon button" @click="addProductToCart(product,product.quantity,product.size)">
                   <a class="nav-icon position-relative text-decoration-none">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         
@@ -104,23 +113,14 @@
        
     
     </main>
-     
-     
 </div>
 </template>
+
 <script>
 export default {
     data:function(){
         return {
             products:[],
-            options: [
-          { value: null, text: 'Choose a size' },
-          { value: 'a', text: 'XS' },
-          { value: 'b', text: 'S' },
-          { value: 'c', text: 'M' },
-          { value: 'd', text: 'L'},
-          { value: 'e', text: 'XL'}
-        ],
             isloading:false
         }
     },
@@ -145,16 +145,20 @@ export default {
             })
             
         },
-         addProductToCart(product,x){
+         addProductToCart(product,x,y){
             
-          if (isNaN(x)){
-              product.quantity = 1
+          if (isNaN(x) || x <= 0 || y == null){
+              const Swal = require('sweetalert2')
+              Swal.fire({
+             text: 'Please enter valid data and try again',
+             icon: 'error',
+             title: 'Error!',
+            
+          })
+            
                
             }else{
-            product.quantity = x
-            
-        }  
-            console.log(product)
+             console.log(product)
             this.$store.commit('pushProductToCart',product)
             const Swal = require('sweetalert2')
             Swal.fire({
@@ -164,6 +168,9 @@ export default {
             showConfirmButton: false,
              timer: 1500
           })
+            
+        }
+     
             
         }
        

@@ -460,18 +460,18 @@ button.subscribe{
 }
 button.subscribe:hover{
     background-position: right center;
-}
-input.quantity {
-    width: 65%;
-    background: #bdc1c3;
-    color: white;
-    border: #767777 solid 2px ;
+}input.quantity {
+    width: 85%;
+    background: #ffffff;
+    color: black;
+    border: #cdd5da solid 1px;
     margin-top: 24px;
 }
 input.quantity::placeholder{
     color: black;
-    text-align: center;
+    text-align: left;
     font-size: 16px;
+    opacity:0.5;
 }
 button.carticon:hover{
   background:#8a8989;
@@ -496,17 +496,16 @@ label.modallabel{
     padding-bottom: 20px;
 }
 .composition{
-  width:50%
+  width:50%;
+  padding-bottom: 15px;
 }
-.custom-select::placeholder{
-  color: black;
-}
+
 .size span{
   padding-right:75px
 }
-.checkout{
-      float: right;
-    margin-right: 70px;
+.checkout {
+    float: right;
+    margin-right: 0px;
     top: -42px;
     position: relative;
 }
@@ -514,7 +513,14 @@ label.modallabel{
   padding-left:50px!important;
 }
 .select{
-padding-left:30px!important;
+padding-left:15px!important;
+}
+.select::placeholder{
+  color: black;
+    text-align: left;
+    font-size: 16px;
+    opacity:0.5;
+
 }
 h2.modaltitle{
       text-transform: capitalize;
@@ -524,5 +530,28 @@ h2.modaltitle{
 }
 .description{
   padding-right: 30px;
+}
+.price-label{
+      width: 75%;
+    font-size: 30px!important;
+    float: right;
+}
+button.carticon {
+    background: #d0d3d5!important;
+}
+.active{
+  display:none;
+}
+.select2 {
+    padding-left: 15px!important;
+    width: 48%!important;
+}
+input.quantity2 {
+    width: 60%;
+    background: #ffffff;
+    color: black;
+    border: #cdd5da solid 1px;
+    margin-top: 0px;
+    margin: 0 10px;
 }
 </style>
